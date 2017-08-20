@@ -11,15 +11,23 @@ package sokobansimpleaf;
  */
 public class Box extends Actor{
 
-    /*
+    char boxToken = 'B';
+    
+    
     @Override
     public char getToken() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return boxToken;
     }
 
     @Override
-    public void setToken(char token) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setToken(char boxToken) {
+        this.boxToken = boxToken;
     }
-    */
+
+    public Box(int x,int y) {
+        super(x, y);
+    }
+    
+    
+    
 }

@@ -5,6 +5,8 @@
  */
 package sokobansimpleaf;
 
+import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
@@ -18,10 +20,33 @@ public class Board extends JPanel{
     ArrayList storages = new ArrayList();
     Player soko;
     
-    private Slot[][] map = new Slot[4][4]; 
-    //do du lieu vao map sao cho da co toa do cua player, boxs, storage
+    Slot[][] slots = new Slot[4][4];
+    Player p = new Player(1, 1);
+    Box b = new Box(2,2);
+    Storage s = new Storage(3,2);
     
+    
+        //do du lieu vao map sao cho da co toa do cua player, boxs, storage
+        //1 GridLayOut m la 1 panel chua cac o 
+        JPanel m = new JPanel(new GridLayout(4,4,0,0));
+        
     public Board(){
+        
+        
+        
+        //do du lieu va set token:
+        for (int i=0;i<slots.length;i++){
+            for (int j=0;j<slots.length;j++){
+                m.add(slots[i][j] = new Slot());
+                if(i == p.x && j == p.y){
+                    slots[i][j].setToken(p.getToken());
+                }else if(i == b.x && j == b.y){
+                    slots[i][j].setToken(b.getToken());
+                }else if(i == s.x && j == s.y){
+                    slots[i][j].setToken(s.getToken());
+                }
+            }
+        }
         
         
         initWorld();
@@ -46,9 +71,23 @@ public class Board extends JPanel{
     public void initWorld(){
         int x = OFFSET;
         int y = OFFSET;
-        
+      
         Box box ;
         Storage s;
         
+        // add Player,Box,Storage vao World theo Map m:
+        for (int i =0;i<= slots.length;i++){
+            for(int j=0;j<= slots.length;j++){
+                char slotToken = slots[i][j].getToken();
+                
+                
+        }
+        }
+        
     }
+    
+    public void buildWord(Graphics g){
+        
+    }
+    
 }

@@ -11,16 +11,21 @@ package sokobansimpleaf;
  */
 public class Storage extends Actor {
 
+    char storageToken = 'S';
     
-    /*
     @Override
     public char getToken() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return storageToken;
     }
 
     @Override
-    public void setToken(char token) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setToken(char storageToken) {
+        this.storageToken = storageToken;
     }
-    */
+
+    public Storage(int x, int y) {
+        super(x, y);
+    }
+    
+    
 }
