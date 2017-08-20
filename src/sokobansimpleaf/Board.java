@@ -5,9 +5,13 @@
  */
 package sokobansimpleaf;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
@@ -28,16 +32,16 @@ public class Board extends JPanel{
     
         //do du lieu vao map sao cho da co toa do cua player, boxs, storage
         //1 GridLayOut m la 1 panel chua cac o 
-        JPanel m = new JPanel(new GridLayout(4,4,0,0));
+        //JPanel m = new JPanel(new GridLayout(4,4,0,0));
         
     public Board(){
-        
+        setLayout(new GridLayout(4,4,0,0));
         
         
         //do du lieu va set token:
         for (int i=0;i<slots.length;i++){
             for (int j=0;j<slots.length;j++){
-                m.add(slots[i][j] = new Slot());
+                add(slots[i][j] = new Slot());
                 if(i == p.x && j == p.y){
                     slots[i][j].setToken(p.getToken());
                 }else if(i == b.x && j == b.y){
@@ -50,7 +54,7 @@ public class Board extends JPanel{
         
         
         initWorld();
-        
+        //add(m,BorderLayout.CENTER);
     }
 
     public int getBoardHeight() {
@@ -76,18 +80,50 @@ public class Board extends JPanel{
         Storage s;
         
         // add Player,Box,Storage vao World theo Map m:
-        for (int i =0;i<= slots.length;i++){
-            for(int j=0;j<= slots.length;j++){
+        for (int i =0;i< slots.length;i++){
+            for(int j=0;j< slots.length;j++){
                 char slotToken = slots[i][j].getToken();
                 
+                //if(slotToken == 'P'){}
                 
         }
         }
         
     }
     
-    public void buildWord(Graphics g){
+    public void buildWorld(Graphics g){
+        g.setColor(Color.RED);
+        g.drawRect(0, 0, this.getWidth(), this.getHeight());
         
+        /*Ap dung cho 1 mang nhieu Actors
+        ArrayList world = new ArrayList();
+        world.add(p);
+        world.add(b);
+        world.add(s);
+        
+        
+        for(int i=0;i<world.size();i++){
+            
+                
+                Actor item = (Actor) world.get(i);
+            
+                if (item instanceof Player) {
+                    g.drawString("P", item.x, item.y);
+        }       else if(item instanceof Box){
+                    g.drawString("B", item.x, item.y);
+        }       else if(item instanceof Storage){
+                    g.drawString("S",item.x,item.y);
+        }
+        }*/ 
+        
+        
+        
+    }
+    
+    @Override
+    public void paint(Graphics g){
+        super.paint(g);
+        buildWorld(g);
     }
     
 }

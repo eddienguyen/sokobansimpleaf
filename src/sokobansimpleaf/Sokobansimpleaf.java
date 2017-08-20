@@ -6,6 +6,7 @@
 package sokobansimpleaf;
 
 
+import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import javax.swing.JFrame;
 /**
@@ -23,6 +24,7 @@ public class Sokobansimpleaf extends JFrame {
     
     public void initUI(){
         Board mainboard = new Board();
+        
         add(mainboard);
         
         setTitle("Sokoban the Simple AF version");
