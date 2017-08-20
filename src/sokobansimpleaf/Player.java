@@ -11,28 +11,24 @@ package sokobansimpleaf;
  */
 public class Player extends Actor {
     
+    char playerToken = 'P';
     
-    /*
+    
     @Override
     public char getToken() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        return playerToken;
+                }
 
     @Override
-    public void setToken(char token) {
-        token = 'P';
-    }
-    */
-    public void getToken(){
-        
+    public void setToken(char playerToken) {
+        this.playerToken = playerToken;
     }
     
-    public void setToken(char c){
-        this.token = c;
-        
-    }
+    
+    
+    
     public Player(int x,int y){
-        
+        super(x, y);
     }
     public void move(){
         

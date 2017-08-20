@@ -13,8 +13,29 @@ public abstract class Actor {
     char token = ' ';
     int x;
     int y;
-    //public abstract char getToken() ;
-    //public abstract void setToken(char token) ;
+    
+    
+    public abstract char getToken() ;
+    public abstract void setToken(char token) ;
+    
+    
+    
+    /*
+    public char getToken() {
+        return token;
+    }
+
+    public void setToken(char token) {
+        this.token = token;
+    }
+    */
+
+    public Actor(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    
+    
     }
     
     
