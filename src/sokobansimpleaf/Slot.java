@@ -28,11 +28,26 @@ public class Slot extends JPanel {
     
 
     //khoi tao cell
-    public Slot() {
-        //duong vien:
-        buildSlot(g);
-        setBorder(new LineBorder(Color.BLACK));
+    public void paintComponent(Graphics g){
+        super.setBorder(new LineBorder(Color.BLACK));
+        super.paintComponent(g);
+        
+        if(token == 'P'){
+            
+            g.setColor(Color.red);
+            g.drawString("P", 35, 35);
+        } else if(token =='B'){
+            g.setColor(Color.DARK_GRAY);
+            g.drawString("B",35, 35);
+        } else if(token =='S'){
+            g.setColor(Color.MAGENTA);
+            g.drawString("S", 35, 35);
+        }
+        
+              
+    }
 }
+    /*
     public void buildSlot(Graphics g){
         for (int i =0;i< slots.length;i++){
             for(int j=0;j< slots.length;j++){
@@ -42,5 +57,10 @@ public class Slot extends JPanel {
                 }
             }
         }
-    }
-}
+    } */
+
+    
+    
+
+
+
